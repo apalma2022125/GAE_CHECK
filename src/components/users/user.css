@@ -1,0 +1,90 @@
+.user-management {
+    padding-top: 20px;
+    padding-right: 40px;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header button, .create-user-button {
+    background-color: #0d8a17;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    font-family: inherit; /* Usa la misma fuente que el header */
+}
+
+.header button:hover, .create-user-button:hover {
+    background-color: #030e2e;
+    color: #fff;
+}
+
+.user-table {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.user-table th {
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Contenedor para los botones de editar y eliminar */
+.user-table .action-buttons {
+    display: flex;
+    gap: 8px; /* Espacio entre los botones */
+}
+
+/* Botones para editar y eliminar */
+.user-table button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    width: 60px; /* Ajusta el tamaño del botón */
+    height: 50px; /* Ajusta el tamaño del botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imágenes dentro de los botones */
+.user-table button img {
+    width: 60px; /* Tamaño de la imagen */
+    height: 60px; /* Tamaño de la imagen */
+}

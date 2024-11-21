@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+.personal{
+  background-color: #610b3f;
+}
+/*------------------------------------------ CARTA ------------------------------------------------------------*/
+.e-card {
+  margin: auto;
+  margin-top: 50px;
+  background: transparent;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 300%;
+  opacity: 0.6;
+  left: 0;
+  top: 0;
+  margin-left: -50%;
+  margin-top: -70%;
+  z-index: 1; /* Set z-index for waves */
+}
+
+.wave:nth-child(2),
+.wave:nth-child(3) {
+  top: 210px;
+}
+
+.playing .wave {
+  border-radius: 40%;
+  animation: wave 6000ms infinite linear; /* 3000 */
+}
+
+.wave {
+  border-radius: 40%;
+  animation: wave 120s infinite linear; /* 55 */
+}
+
+.playing .wave:nth-child(2) {
+  animation-duration: 8000ms; /* 4000 */
+}
+
+.wave:nth-child(2) {
+  animation-duration: 100s; /* 50 */
+}
+
+.playing .wave:nth-child(3) {
+  animation-duration: 10000ms; /* 5000 */
+}
+
+.wave:nth-child(3) {
+  animation-duration: 80s; /* 45 */
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  width: 6em; /* Mantiene el tamaño del ícono */
+  height: 6em;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1em;
+}
+
+/* ---------------------------------TIEMPO --------------------------------------------------*/
+.card {
+  width: 320px;
+  color: black;
+  position: relative;
+  border-radius: 2.5em;
+  padding: 2em;
+  transition: transform 0.4s ease;
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5em;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.card .card-top, .card .card-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .card-top p, .card .card-top .card-title, .card .card-bottom p, .card .card-bottom .card-title {
+  margin: 0;
+}
+
+.card .card-title {
+  font-weight: bold;
+}
+
+.card .card-top p, .card .card-bottom p {
+  font-weight: 600;
+}
+
+.card .card-bottom {
+  align-items: flex-end;
+}
+
+.card .card-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.card .status-icon {
+  width: 4em;
+  height: 4em;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .status-icon {
+  transform: scale(1.05);
+}
+
+.card:hover {
+  transform: scale(0.97);
+}
+
+.card:hover .card-content {
+  transform: scale(0.96);
+}
+
+.card:hover .card-image svg {
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.9);
+}
+
+.content-user {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+  padding: 20px;
+  z-index: 2;
+  position: relative;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  justify-content: flex-start; /* Alinea los elementos al inicio (izquierda) */
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px; /* Añade espacio entre la imagen y el texto */
+  object-fit: cover; /* Evita la deformación de la imagen */
+}
+
+.infotop {
+  display: flex;
+  flex-direction: column; /* Organiza el texto en una columna */
+  text-align: left; /* Alinea el texto a la izquierda */
+  color: white; /* Cambia el color del texto a blanco */
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.user-department {
+  font-size: 12px;
+  margin-top: 5px; /* Espacio entre líneas de texto */
+}
+
+.date-time {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Alinea la fecha a la derecha */
+}
+
+
+
+/* ------------------------------------------ Boton de enviar ---------------------------------------*/
+
+/* From Uiverse.io by alexmaracinaru */
+button {
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #cfef00;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  position: relative; /* Asegura que el botón esté posicionado en el flujo de la página */
+  z-index: 3; /* Asegura que esté por encima de las olas */
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background: #c4e201;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/*----------------------------------------- pop-ups -----------------------------------------*/
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que el pop-up esté encima del resto del contenido */
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.popup-actions button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup-actions button:hover {
+  background-color: #2980b9;
+}
+
+.popup-actions button:focus {
+  outline: none;
+}
+
+/* ----------------------------------- Estilos Dinámicos de Olas ---------------------------------*/
+.e-card.playing .wave {
+  background: linear-gradient(744deg, #030e2e, #023a0e, #05a00d); /* Estos colores se definen dinámicamente en React */
+}
+
+.e-card.playing .wave:nth-child(2) {
+  top: 210px;
+}
+
+.e-card.playing .wave:nth-child(3) {
+  top: 420px;
+}
+
+.e-card.tarde .wave {
+  background: linear-gradient(744deg, #8b0000, #b22222, #ff4500);
+}
+
+/* -------------------------------------------------- Media Queries ----------------------------*/
+@media (max-width: 768px) {
+  .e-card {
+    width: 95%;
+    max-width: none;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .user-name {
+    font-size: 16px;
+  }
+
+  .user-department {
+    font-size: 12px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+
+.name {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.date-time {
+  flex: 1; /* Permite que el espacio se distribuya */
+  display: flex; /* Habilita flexbox para la fecha */
+  justify-content: flex-end; /* Alinea la fecha a la derecha */
+}
+
+
+/* ------------------------------------------ Boton de enviar ---------------------------------------*/
+
+/* From Uiverse.io by alexmaracinaru */
+button {
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #cfef00;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  position: relative; /* Asegura que el botón esté posicionado en el flujo de la página */
+  z-index: 3; /* Asegura que esté por encima de las olas */
+}
+
+button:hover {
+  background: #c4e201;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/*----------------------------------------- pop-ups -----------------------------------------*/
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que el pop-up esté encima del resto del contenido */
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.popup-actions button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup-actions button:hover {
+  background-color: #2980b9;
+}
+
+.popup-actions button:focus {
+  outline: none;
+}
